@@ -1,0 +1,12 @@
+h1 {
+    text-align: center;
+}
+
+#list {
+    display: flex;
+    justify-content: space-around;
+}
+
+ul {
+    list-style-type: none;
+}
