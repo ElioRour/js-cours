@@ -6,13 +6,14 @@ function options() {
 var contacts = []; // Déclaration du tableau contacts.
 var Contact = {
     // Initialisation du prototype des contacts
-    init: function (nom, prenom) {
+    init: function (nom, prenom, numero) {
         this.nom = nom;
         this.prenom = prenom;
+        this.numero = numero;
     },
 
     decrire: function () {
-        var description = "Nom : " + this.nom + ", prénom : " + this.prenom;
+        var description = "Nom : " + this.nom + ", prénom : " + this.prenom + ", numéro de téléphone : " + this.numero;
         return description;
     }
 };
@@ -25,10 +26,10 @@ function lister() {
 }
 // Ajout des contacts de base
 var contact1 = Object.create(Contact);
-contact1.init("Lévisse", "Carole");
+contact1.init("Féracin", "Zoé", "0491877154");
 
 var contact2 = Object.create(Contact);
-contact2.init("Nelsonne", "Mélodie");
+contact2.init("Hage", "Rosalie", "0470326941");
 
 contacts.push(contact1);
 contacts.push(contact2);
@@ -49,6 +50,7 @@ while (!leave) {
             var nouveauContact = Object.create(Contact);
             nouveauContact.nom = prompt("Entrez un Nom :");
             nouveauContact.prenom = prompt("Entrez un prénom :");
+            nouveauContact.numero = String(prompt("Entrez un numéro de téléphone :"));
             contacts.push(nouveauContact);
             console.log("Félicitations, vous avez crée un contact du nom de " + nouveauContact.prenom + " " + nouveauContact.nom + " !");
             break;
